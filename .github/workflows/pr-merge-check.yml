@@ -12,3 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: exit 0
+  xxx:
+    needs: merge-check
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh pr list
