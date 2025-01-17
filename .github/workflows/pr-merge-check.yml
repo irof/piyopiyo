@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo hello
+      - run: date
       - run: exit 0
   auto-merge-pr:
     needs: merge-check
