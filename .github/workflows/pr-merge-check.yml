@@ -1,0 +1,21 @@
+name: on pull request required check
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hello
+  merge-check:
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
+  xxx:
+    needs: merge-check
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - run: gh pr list
