@@ -2,7 +2,8 @@ name: on pull request required check
 on:
   pull_request:
     branches: [ "main" ]
-permissions: write-all
+permissions:
+  contents: write
 jobs:
   prepare:
     runs-on: ubuntu-latest
