@@ -12,7 +12,7 @@ jobs:
       - run: exit 0
   auto-merge-pr:
     needs: merge-check
-    if: github.event.pull_request.user.login == '---' # とりあえず動かさない
+    if: github.event.pull_request.user.login == 'irof'
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
