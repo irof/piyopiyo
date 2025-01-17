@@ -3,11 +3,12 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
-  hello:
+  prepare:
     runs-on: ubuntu-latest
     steps:
       - run: echo hello
   merge-check:
+    needs: prepare
     runs-on: ubuntu-latest
     steps:
       - run: exit 0
