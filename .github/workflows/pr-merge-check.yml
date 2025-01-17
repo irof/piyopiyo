@@ -15,5 +15,7 @@ jobs:
   xxx:
     needs: merge-check
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - run: gh pr list
