@@ -1,9 +1,6 @@
 name: HELLO
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
 jobs:
   hello-build:
     runs-on: ubuntu-latest
