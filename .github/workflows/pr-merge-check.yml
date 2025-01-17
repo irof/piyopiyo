@@ -5,17 +5,14 @@ on:
 permissions:
   contents: write
 jobs:
-  prepare:
+  merge-check:
     runs-on: ubuntu-latest
     steps:
       - run: echo hello
-  merge-check:
-    needs: prepare
-    runs-on: ubuntu-latest
-    steps:
       - run: exit 0
-  merge-pr:
+  auto-merge-pr:
     needs: merge-check
+    if: github.event.pull_request.user.login == 'irof'
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
